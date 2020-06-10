@@ -138,6 +138,8 @@ z=z[0:k]
 
 tilt = np.zeros(k)
 import math
+mqttc.publish(topic, j)
+mqttc.publish(topic, k)
 for i in range(0,k):
     mqttc.publish(topic, x[i])
     mqttc.publish(topic, y[i])
@@ -154,7 +156,7 @@ for i in range(0,k):
         tilt[i]=0
     mqttc.publish(topic, tilt[i])
 
-
+mqttc.publish(topic, 500)
 
 t = np.arange(0,j,1)
 plt.plot(t,num)
